@@ -1,0 +1,1812 @@
+
+/* =====================================
+   ODIN - MAIN STYLESHEET
+   ===================================== */
+
+
+/* 1. GLOBAL SETTINGS */
+
+:root {
+    --primary: #c90000;
+    --primary-dark: #a80000;
+
+    --black: #151515;
+    --dark: #202020;
+    --gray: #777777;
+
+    --light-gray: #f4f4f4;
+    --white: #ffffff;
+
+    --border: #e8e8e8;
+
+    --container: 1160px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+.container {
+    width: min(90%, var(--container));
+    margin: 0 auto;
+}
+
+
+.section {
+    padding: 100px 0;
+}
+
+
+/* 2. HEADER */
+
+.site-header {
+    width: 100%;
+    height: 82px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header-inner {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.brand img {
+    width: 125px;
+    height: 65px;
+    object-fit: contain;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+
+.nav-link {
+    color: #444444;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+
+    position: relative;
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--primary);
+}
+
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: var(--black);
+
+    transition: 0.25s;
+}
+
+
+/* 3. HERO */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero-grid {
+    min-height: 610px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 40px;
+
+    padding-top: 40px;
+    padding-bottom: 65px;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--gray);
+
+    margin-bottom: 28px;
+}
+
+
+.red-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+
+.hero h1 {
+    max-width: 650px;
+
+    font-size: clamp(42px, 5.3vw, 70px);
+    line-height: 1.08;
+
+    letter-spacing: -3px;
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+
+.hero-description {
+    max-width: 510px;
+
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.9;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+.button {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    padding: 0 23px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    border: 1px solid transparent;
+
+    transition: 0.25s ease;
+}
+
+
+.button-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+
+.button-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+.button-outline {
+    border-color: #dddddd;
+    color: var(--black);
+}
+
+
+.button-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+.hero-caption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 60px;
+
+    color: #999999;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+
+.hero-caption span:first-child {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.visual-frame {
+    width: min(100%, 440px);
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.visual-circle {
+    position: absolute;
+
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+}
+
+
+.circle-one {
+    width: 90%;
+    height: 90%;
+}
+
+
+.circle-two {
+    width: 68%;
+    height: 68%;
+}
+
+
+.visual-center {
+    width: 58%;
+    height: 58%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--white);
+
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.visual-center img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+
+.visual-label {
+    position: absolute;
+
+    color: #999999;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.label-top {
+    top: 4%;
+}
+
+
+.label-bottom {
+    bottom: 4%;
+}
+
+
+.visual-number {
+    position: absolute;
+
+    bottom: 11%;
+    right: 8%;
+
+    color: #ededed;
+
+    font-size: 44px;
+    font-weight: 900;
+}
+
+
+.visual-number span {
+    color: #e0b8b8;
+}
+
+
+.hero-bottom-line {
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary) 0%,
+        var(--primary) 35%,
+        #ededed 35%,
+        #ededed 100%
+    );
+}
+
+
+/* 4. SECTION HEADINGS */
+
+.section-heading {
+    margin-bottom: 48px;
+}
+
+
+.section-index {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 16px;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 14px;
+}
+
+
+.section-heading h2 span {
+    color: var(--primary);
+}
+
+
+.section-heading > p {
+    color: var(--gray);
+    font-size: 14px;
+    max-width: 570px;
+}
+
+
+/* 5. ABOUT SECTION */
+
+.about-section {
+    border-bottom: 1px solid var(--border);
+}
+
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+
+.about-title h3 {
+    font-size: clamp(29px, 3.5vw, 43px);
+    line-height: 1.35;
+    letter-spacing: -1px;
+}
+
+
+.about-title h3 span {
+    color: var(--primary);
+}
+
+
+.about-description p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 2;
+
+    margin-bottom: 18px;
+}
+
+
+.about-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 6. COVERAGE SECTION */
+
+.coverage-section {
+    background: var(--light-gray);
+}
+
+
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+
+.coverage-card {
+    min-height: 255px;
+
+    padding: 28px 23px;
+
+    background: var(--white);
+    border: 1px solid #eeeeee;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+.coverage-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+}
+
+
+.card-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    color: #bbbbbb;
+    font-size: 11px;
+}
+
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    color: var(--primary);
+
+    border: 1px solid #f0caca;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    margin-bottom: 27px;
+}
+
+
+.coverage-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+
+.coverage-card p {
+    color: var(--gray);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* 7. PLATFORMS SECTION */
+
+.platform-main {
+    min-height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--black);
+    color: var(--white);
+
+    padding: 45px 55px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+
+.platform-status {
+    color: #ff7777;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.platform-content h3 {
+    font-size: 40px;
+    margin: 12px 0;
+}
+
+
+.platform-content > p {
+    max-width: 450px;
+
+    color: #b7b7b7;
+    font-size: 13px;
+
+    margin-bottom: 23px;
+}
+
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--primary);
+
+    padding-bottom: 7px;
+}
+
+
+.text-link:hover {
+    color: #ff7777;
+}
+
+
+.platform-symbol {
+    width: 180px;
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    border-radius: 50%;
+
+    color: var(--white);
+    font-size: 130px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+
+.future-platforms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 18px;
+
+    border: 1px solid var(--border);
+}
+
+
+.future-platform {
+    padding: 25px;
+
+    border-right: 1px solid var(--border);
+}
+
+
+.future-platform:last-child {
+    border-right: none;
+}
+
+
+.future-platform > span {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.future-platform h4 {
+    font-size: 16px;
+    margin: 8px 0 4px;
+}
+
+
+.future-platform p {
+    color: var(--gray);
+    font-size: 11px;
+}
+
+
+/* 8. CONTACT SECTION */
+
+.contact-section {
+    background: var(--primary);
+    color: var(--white);
+}
+
+
+.contact-inner {
+    text-align: center;
+}
+
+
+.contact-section .section-index {
+    color: #ffbaba;
+}
+
+
+.contact-section h2 {
+    font-size: clamp(37px, 5vw, 57px);
+    line-height: 1.2;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+
+.contact-section h2 span {
+    color: #ffd1d1;
+}
+
+
+.contact-section p {
+    max-width: 490px;
+
+    margin: 0 auto 30px;
+
+    color: #ffe1e1;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+.button-light {
+    background: var(--white);
+    color: var(--primary);
+}
+
+
+.button-light:hover {
+    background: #eeeeee;
+    transform: translateY(-2px);
+}
+
+
+/* 9. FOOTER */
+
+.site-footer {
+    background: var(--black);
+    color: var(--white);
+
+    padding: 45px 0 20px;
+}
+
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 35px;
+    border-bottom: 1px solid #333333;
+}
+
+
+.footer-brand img {
+    width: 115px;
+    height: 55px;
+
+    object-fit: contain;
+
+    background: var(--white);
+}
+
+
+.footer-brand p {
+    color: #999999;
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    margin-top: 10px;
+}
+
+
+.footer-description {
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 20px;
+}
+
+
+.footer-bottom p {
+    color: #888888;
+    font-size: 10px;
+}
+
+
+/* 10. RESPONSIVE TABLET */
+
+@media (max-width: 900px) {
+
+    .main-nav {
+        gap: 20px;
+    }
+
+
+    .coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .about-grid {
+        gap: 40px;
+    }
+
+
+    .hero-grid {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+
+    .platform-symbol {
+        width: 140px;
+        height: 140px;
+        font-size: 105px;
+    }
+
+}
+
+
+/* 11. RESPONSIVE MOBILE */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 90%;
+    }
+
+
+    .section {
+        padding: 72px 0;
+    }
+
+
+    .site-header {
+        height: 70px;
+    }
+
+
+    .brand img {
+        width: 105px;
+        height: 55px;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    .main-nav {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 5% 25px;
+
+        background: var(--white);
+
+        border-bottom: 1px solid var(--border);
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+
+    .main-nav.is-open {
+        display: flex;
+    }
+
+
+    .nav-link {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    .nav-link.active::after {
+        display: none;
+    }
+
+
+    .hero-grid {
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 25px;
+
+        padding-top: 75px;
+        padding-bottom: 55px;
+    }
+
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(39px, 11vw, 53px);
+        letter-spacing: -2px;
+    }
+
+
+    .hero-description {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+
+    .hero-caption {
+        margin-top: 38px;
+        font-size: 8px;
+    }
+
+
+    .hero-visual {
+        margin-top: 5px;
+    }
+
+
+    .visual-frame {
+        max-width: 340px;
+    }
+
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+
+    .about-title h3 {
+        font-size: 32px;
+    }
+
+
+    .about-description p {
+        font-size: 13px;
+    }
+
+
+    .coverage-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+
+    .coverage-card {
+        min-height: 235px;
+        padding: 20px 15px;
+    }
+
+
+    .coverage-card h3 {
+        font-size: 15px;
+    }
+
+
+    .coverage-card p {
+        font-size: 11px;
+    }
+
+
+    .platform-main {
+        min-height: 260px;
+
+        padding: 32px 25px;
+    }
+
+
+    .platform-content h3 {
+        font-size: 33px;
+    }
+
+
+    .platform-content > p {
+        font-size: 12px;
+        max-width: 230px;
+    }
+
+
+    .platform-symbol {
+        width: 70px;
+        height: 70px;
+        font-size: 54px;
+    }
+
+
+    .future-platforms {
+        grid-template-columns: 1fr;
+    }
+
+
+    .future-platform {
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    .future-platform:last-child {
+        border-bottom: none;
+    }
+
+
+    .contact-section h2 {
+        font-size: 39px;
+    }
+
+
+    .contact-section p {
+        font-size: 13px;
+    }
+
+
+    .footer-top,
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+
+    .footer-top {
+        padding-bottom: 25px;
+    }
+
+
+    .footer-bottom {
+        gap: 8px;
+    }
+
+}
+
+
+/* 12. SMALL MOBILE */
+
+@media (max-width: 360px) {
+
+    .coverage-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+
+    .platform-main {
+        padding: 25px 18px;
+    }
+
+
+    .platform-symbol {
+        width: 55px;
+        height: 55px;
+        font-size: 42px;
+    }
+
+}
+
+
+/* =====================================
+   ODIN - INNER PAGES
+   ABOUT / NEWS / CONTACT
+   ===================================== */
+
+
+/* 1. PAGE HERO */
+
+.page-hero {
+    padding: 100px 0 65px;
+
+    background: var(--light-gray);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.page-title {
+    max-width: 850px;
+
+    font-size: clamp(44px, 7vw, 76px);
+
+    line-height: 1.12;
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+.page-title span {
+    display: block;
+    color: var(--primary);
+}
+
+
+.page-lead {
+    max-width: 650px;
+
+    color: var(--gray);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+.page-hero-footer {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #dddddd;
+
+    margin-top: 75px;
+    padding-top: 18px;
+
+    color: #999999;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* 2. IDENTITY SECTION */
+
+.identity-section {
+    background: var(--light-gray);
+}
+
+
+.identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+
+.identity-card {
+    min-height: 270px;
+
+    padding: 35px;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+
+.identity-featured {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+
+.identity-number {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    margin-bottom: 35px;
+}
+
+
+.identity-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+.identity-card p {
+    max-width: 480px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+.identity-featured p {
+    color: #bbbbbb;
+}
+
+
+/* 3. PRINCIPLES */
+
+.principles-list {
+    border-top: 1px solid var(--border);
+}
+
+
+.principle-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+
+    gap: 25px;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.principle-item > span {
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.principle-item h3 {
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+
+.principle-item p {
+    color: var(--gray);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* 4. PAGE CLOSING */
+
+.page-closing {
+    padding: 80px 0;
+
+    background: var(--light-gray);
+
+    border-top: 1px solid var(--border);
+}
+
+
+.page-closing > .container > p {
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+.page-closing h2 {
+    max-width: 700px;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    line-height: 1.3;
+    letter-spacing: -1.5px;
+
+    margin-bottom: 30px;
+}
+
+
+.page-closing h2 span {
+    display: block;
+    color: var(--primary);
+}
+
+
+/* 5. NEWS TOPIC CARDS */
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.topic-card {
+    min-height: 270px;
+
+    padding: 28px 25px;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+
+    position: relative;
+
+    transition: 0.25s ease;
+}
+
+
+.topic-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+
+.topic-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    color: #bbbbbb;
+    font-size: 11px;
+}
+
+
+.topic-tag {
+    display: inline-block;
+
+    color: var(--primary);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #f0cdcd;
+
+    margin-bottom: 32px;
+}
+
+
+.topic-card h3 {
+    max-width: 220px;
+
+    font-size: 19px;
+
+    line-height: 1.4;
+
+    margin-bottom: 13px;
+}
+
+
+.topic-card p {
+    color: var(--gray);
+
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* 6. EDITORIAL STANDARD */
+
+.editorial-section {
+    padding: 80px 0;
+
+    background: var(--black);
+    color: var(--white);
+}
+
+
+.editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+
+.editorial-section .section-index {
+    color: #ff7777;
+}
+
+
+.editorial-grid h2 {
+    max-width: 440px;
+
+    font-size: clamp(32px, 4vw, 45px);
+    line-height: 1.3;
+
+    letter-spacing: -1px;
+}
+
+
+.editorial-grid h2 span {
+    color: #ff7777;
+}
+
+
+.editorial-description p {
+    color: #bcbcbc;
+
+    font-size: 13px;
+    line-height: 2;
+
+    margin-bottom: 17px;
+}
+
+
+.editorial-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 7. NEWS PLATFORM */
+
+.news-platform {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 40px;
+
+    border: 1px solid var(--border);
+}
+
+
+.news-platform h2 {
+    max-width: 550px;
+
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.3;
+
+    margin-bottom: 15px;
+}
+
+
+.news-platform h2 span {
+    display: block;
+    color: var(--primary);
+}
+
+
+.news-platform p {
+    max-width: 500px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* 8. CONTACT CARDS */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.contact-card {
+    min-height: 300px;
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+
+    position: relative;
+
+    transition: 0.25s ease;
+}
+
+
+.contact-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+
+.contact-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    color: #bbbbbb;
+    font-size: 11px;
+}
+
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary);
+
+    border: 1px solid #f0cdcd;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    margin-bottom: 28px;
+}
+
+
+.contact-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+
+.contact-card > p {
+    min-height: 75px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+.contact-link {
+    margin-top: 20px;
+
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+
+.contact-status {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #999999;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* 9. CONTACT STATEMENT */
+
+.contact-statement {
+    padding: 85px 0;
+
+    background: var(--primary);
+    color: var(--white);
+
+    text-align: center;
+}
+
+
+.contact-statement .section-index {
+    color: #ffbaba;
+}
+
+
+.contact-statement h2 {
+    max-width: 750px;
+
+    margin: 0 auto 20px;
+
+    font-size: clamp(35px, 5vw, 54px);
+
+    line-height: 1.3;
+    letter-spacing: -2px;
+}
+
+
+.contact-statement h2 span {
+    display: block;
+    color: #ffd1d1;
+}
+
+
+.contact-statement p {
+    max-width: 540px;
+
+    margin: 0 auto 30px;
+
+    color: #ffe2e2;
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* 10. INNER PAGE MOBILE */
+
+@media (max-width: 650px) {
+
+    .page-hero {
+        padding: 75px 0 45px;
+    }
+
+
+    .page-title {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+
+    .page-lead {
+        font-size: 13px;
+    }
+
+
+    .page-hero-footer {
+        margin-top: 45px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+
+    .identity-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+
+    .identity-card {
+        min-height: 220px;
+        padding: 25px;
+    }
+
+
+    .identity-number {
+        margin-bottom: 25px;
+    }
+
+
+    .principle-item {
+        grid-template-columns: 40px 1fr;
+        gap: 12px;
+
+        padding: 23px 0;
+    }
+
+
+    .principle-item h3 {
+        font-size: 16px;
+    }
+
+
+    .principle-item p {
+        font-size: 12px;
+    }
+
+
+    .page-closing {
+        padding: 65px 0;
+    }
+
+
+    .topic-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+
+    .topic-card {
+        min-height: 280px;
+        padding: 20px 14px;
+    }
+
+
+    .topic-tag {
+        font-size: 8px;
+        margin-bottom: 25px;
+    }
+
+
+    .topic-card h3 {
+        font-size: 15px;
+    }
+
+
+    .topic-card p {
+        font-size: 11px;
+    }
+
+
+    .editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+
+    .editorial-grid h2 {
+        font-size: 34px;
+    }
+
+
+    .news-platform {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding: 27px 22px;
+
+        gap: 25px;
+    }
+
+
+    .news-platform h2 {
+        font-size: 31px;
+    }
+
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+
+    .contact-card {
+        min-height: 260px;
+        padding: 25px;
+    }
+
+
+    .contact-card > p {
+        min-height: auto;
+    }
+
+
+    .contact-statement {
+        padding: 70px 0;
+    }
+
+
+    .contact-statement h2 {
+        font-size: 36px;
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
